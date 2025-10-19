@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reactive SSE Demo</title>
+</head>
+<body>
+<h2>Reactive SSE Stream</h2>
+<ul id="reactive-events"></ul>
+
+<script>
+  const eventSource = new EventSource('http://localhost:8080/SSE/reactive-events');
+
+  eventSource.onmessage = function(event) {
+    const li = document.createElement('li');
+    li.textContent = "Received: " + event.data;
+    document.getElementById('reactive-events').appendChild(li);
+  };
+
+  eventSource.onerror = function(error) {
+    console.error("EventSource failed:", error);
+    eventSource.close();
+  };
+</script>
+</body>
+</html>

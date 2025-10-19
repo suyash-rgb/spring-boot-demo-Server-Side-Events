@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="events"></ul>
+<script>
+    const eventSource = new EventSource('http://localhost:8080/sse/events');
+
+    eventSource.onmessage = function(event) {
+        const li = document.createElement('li');
+        li.textContent = "Received: " + event.data;
+        document.getElementById('events').appendChild(li);
+    };
+
+    eventSource.onerror = function(error) {
+        console.error("EventSource failed:", error);
+        eventSource.close();
+    };
+</script>
+
+</body>
+</html>
