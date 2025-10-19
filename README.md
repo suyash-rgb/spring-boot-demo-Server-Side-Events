@@ -1,6 +1,3 @@
-**Planning README.md structure**
-
-Alright, the developer provided instructions to ensure we follow the right structure in the README.md with no tool usage. It’s clear we need six sections: Overview, Prereqs, Setup, Running, Endpoints, and Troubleshooting, which should be concise and avoid excessive verbosity. We’ll use code blocks for commands and include instructions for both Windows and UNIX. Also, bold key labels and headings without elaborating too much. I’ll focus on organizing it well with clear instructions, reflecting the user’s request.
 # SSE Spring Boot Demo
 
 A minimal Spring Boot project demonstrating two Server-Sent Events (SSE) approaches:
